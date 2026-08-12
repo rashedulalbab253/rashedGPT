@@ -67,7 +67,7 @@ Optional for deployment:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/entbappy/RashedGPT.git
+git clone https://github.com/rashedulalbab253/rashedGPT.git
 ```
 
 ### 2. Navigate to the project directory
@@ -104,7 +104,7 @@ Create a `.env` file in the project root directory.
 
 ```env
 GOOGLE_API_KEY=your_google_api_key
-GOOGLE_MODEL=gemini-2.5-flash
+GOOGLE_MODEL=gemini-3.6-flash
 
 TAVILY_API_KEY=your_tavily_api_key
 
