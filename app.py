@@ -226,7 +226,7 @@ async def chat_stream(request: Request):
 
     user_message = data.get("message", "")
     thread_id = data.get("thread_id", "default")
-    selected_model = data.get("model", "gemini-2.5-flash")
+    selected_model = data.get("model", "gemini-3.6-flash")
 
     if not user_message.strip():
         return JSONResponse(
@@ -295,10 +295,12 @@ async def chat_stream(request: Request):
 
 
 if __name__ == "__main__":
-   
+    import os
+    host = os.getenv("HOST", "127.0.0.1")
+    port = int(os.getenv("PORT", "8000"))
     uvicorn.run(
         "app:app",
-        host="0.0.0.0",
-        port=8080,
+        host=host,
+        port=port,
         reload=True
     )
