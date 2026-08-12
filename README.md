@@ -164,12 +164,14 @@ RashedGPT/
 
 ---
 
-## Docker Deployment
+## Docker Deployment & Docker Hub
 
-### 1. Build the Docker image
+### 1. Pull from Docker Hub
+
+You can pull the official pre-built image directly from Docker Hub:
 
 ```bash
-docker build -t rashedgpt .
+docker pull rashedulalbab1234/rashedgpt:latest
 ```
 
 ### 2. Run the Docker container
@@ -180,7 +182,7 @@ docker run -d \
   --restart always \
   -p 8080:8080 \
   --env-file .env \
-  rashedgpt
+  rashedulalbab1234/rashedgpt:latest
 ```
 
 The app will be available at:
@@ -188,6 +190,30 @@ The app will be available at:
 ```text
 http://localhost:8080
 ```
+
+### 3. Build locally (Optional)
+
+```bash
+docker build -t rashedulalbab1234/rashedgpt:latest .
+```
+
+---
+
+## Docker Hub CI/CD Integration (GitHub Actions)
+
+This repository includes a GitHub Actions CI/CD pipeline (`.github/workflows/docker-hub-cicd.yml`) that automatically builds and pushes the Docker image to Docker Hub whenever code is pushed to the `main` branch.
+
+### Prerequisites & GitHub Secrets Setup
+
+To enable automated Docker Hub publishing on GitHub:
+
+1. Go to your GitHub repository: [https://github.com/rashedulalbab253/rashedGPT](https://github.com/rashedulalbab253/rashedGPT)
+2. Navigate to **Settings** > **Secrets and variables** > **Actions**.
+3. Click **New repository secret** and add:
+   - `DOCKERHUB_USERNAME`: `rashedulalbab1234`
+   - `DOCKERHUB_TOKEN`: Your Docker Hub Access Token (generated from [Docker Hub Account Settings](https://hub.docker.com/settings/security)).
+
+Whenever you push to `main`, GitHub Actions will build and update `rashedulalbab1234/rashedgpt:latest` on Docker Hub.
 
 ---
 
