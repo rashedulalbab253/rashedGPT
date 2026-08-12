@@ -36,6 +36,12 @@ This project combines:
 
 ---
 
+## Architecture
+
+![RashedGPT Architecture](RashedGPT_architecture.png)
+
+---
+
 ## Prerequisites
 
 Make sure you have the following installed:
@@ -127,7 +133,7 @@ python app.py
 The app will be available at:
 
 ```text
-http://127.0.0.1:8080
+http://127.0.0.1:8000
 ```
 
 ---
@@ -137,21 +143,23 @@ http://127.0.0.1:8080
 ```text
 RashedGPT/
 │
-├── app.py                  # FastAPI app and streaming chat endpoints
-├── agent.py                # LangGraph agent setup and tool orchestration
-├── database.py             # Conversation and persistence logic
-├── rag.py                  # Document ingestion and RAG logic
-├── tools.py                # Agent tools such as web search, memory, and RAG
-├── requirements.txt        # Python dependencies
-├── Dockerfile              # Docker image configuration
-├── .dockerignore           # Docker ignore rules
+├── app.py                      # FastAPI app and streaming chat endpoints
+├── agent.py                    # LangGraph agent setup and tool orchestration
+├── database.py                 # Conversation and persistence logic
+├── rag.py                      # Document ingestion and RAG logic
+├── tools.py                    # Agent tools such as web search, memory, and RAG
+├── requirements.txt            # Python dependencies
+├── Dockerfile                  # Docker image configuration
+├── .dockerignore               # Docker ignore rules
+├── RashedGPT_architecture.png  # High-level architecture diagram
+├── demo.excalidraw             # Editable Excalidraw design file
 │
 ├── templates/
-│   └── index.html          # Frontend UI
+│   └── index.html              # Frontend UI
 │
-├── uploads/                # Uploaded documents
-├── data/                   # SQLite database and app data
-└── chroma_db/              # ChromaDB vector database storage
+├── uploads/                    # Uploaded documents
+├── data/                       # SQLite database and app data
+└── chroma_db/                  # ChromaDB vector database storage
 ```
 
 ---
